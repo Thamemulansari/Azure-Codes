@@ -20,7 +20,7 @@ agent any
             az login --identity
             rm -rf CCM-AZURE
             '''
-            checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'CCM-AZURE' ]], userRemoteConfigs: [[credentialsId: 'e9983fb9-5359-4db7-b641-2bc161c7a0f2', url: 'https://git-codecommit.ap-southeast-1.amazonaws.com/v1/repos/CCM-AZURE']]])
+            checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'Azure-Codes' ]], userRemoteConfigs: [[url: 'https://github.com/Thamemulansari/Azure-Codes.git']]])
             sh '''
             pwd
             ls
@@ -86,7 +86,7 @@ agent any
         fi
         '''
         sh '''
-            rm -rf CCM-AZURE
+            rm -rf Azure-Codes
         '''        
       }
     }
