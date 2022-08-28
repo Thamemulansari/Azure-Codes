@@ -18,7 +18,7 @@ agent any
          steps {
             sh '''
             az login --identity
-            rm -rf CCM-AZURE
+            rm -rf Azure-Codes
             '''
             checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'Azure-Codes' ]], userRemoteConfigs: [[url: 'https://github.com/Thamemulansari/Azure-Codes.git']]])
             sh '''
@@ -54,7 +54,7 @@ agent any
         fi
         '''
         sh '''
-            rm -rf CCM-AZURE
+            rm -rf Azure-Codes
         '''
       }
     }
