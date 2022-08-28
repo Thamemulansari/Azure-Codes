@@ -20,7 +20,7 @@ agent any
             az login --identity
             rm -rf Azure-Codes
             '''
-            checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'Azure-Codes' ]], userRemoteConfigs: [[url: 'https://github.com/Thamemulansari/Azure-Codes.git']]])
+            checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'Azure-Codes' ]], userRemoteConfigs: [[credentialsId:'1141b5b2-34ce-4407-b823-9e10f6fb28bf',url: 'https://github.com/Thamemulansari/Azure-Codes.git']]])
             sh '''
             pwd
             ls
